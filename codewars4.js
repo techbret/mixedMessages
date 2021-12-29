@@ -6,26 +6,14 @@ const alphabet2 = alpha2.map((x) => String.fromCharCode(x).toLowerCase());
 
 
 
-function findMissingLetter(array)
-{
-    if (array[1] === array[1].toUpperCase()) {
-        let firstLetter = array[0]
-        let newArr = []
-        for (let i in array) {
-            for (let j in alphabet) {
-                if (array[i] === alphabet[j]) {
-                    newArr.push(alphabet[j])
-                }
-                break
-            }
-            return newArr;
-        }
-    } else {
-        console.log("Is Lowercase")
+let findMissingLetter = array => {
+    let string = array.join("");
+    for (let i = 0; i < string.length; i++) {
+      if (string.charCodeAt(i+ 1) - string.charCodeAt(i) != 1) {
+        return String.fromCharCode(string.charCodeAt(i) + 1)
+      }
     }
-  return ' ';
-}
-
+  }
 
 console.log(findMissingLetter(["E","F","G","H","J"]))
 
