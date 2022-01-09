@@ -4,7 +4,7 @@ Write a function that when given a URL as a string, parses out just the domain n
 
 function domainName(url){
 
-//Depending on the domain type these three variables will split the url so that it returns a hostname and the top level domain//   
+    //Depending on the domain type these three variables will split the url so that it returns a hostname and the top level domain//   
     let domain = url.replace(/^www\./,'').split('.').slice(0,-1).join('.');
     let domain2 = url.replace(/(^\w+:|^)\/\//, '');
     let domain3 = url.split('w.').pop()
@@ -25,5 +25,12 @@ function domainName(url){
     }
   }
 
+//This is a better version of the code//
 
+function domainName(url){
+    url = url.replace("https://", '');
+    url = url.replace("http://", '');
+    url = url.replace("www.", '');
+    return url.split('.')[0];
+  };
 
