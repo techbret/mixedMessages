@@ -25,5 +25,5 @@ function domainName(url){
     }
   }
 
-
+console.log(domainName('www.test.com'))
 
